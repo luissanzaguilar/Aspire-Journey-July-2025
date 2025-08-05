@@ -1,14 +1,19 @@
-name: Run Tests
+name: Run Project Tests
 
-on: [push, pull_request]  # Trigger on push or PR
+on: [push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Checkout code
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm test
+      - uses: actions/checkout@v4   # Descarga el código
+      - name: Run custom command
+        run: |  # Reemplaza esto con tus comandos
+          echo "Installing dependencies..."
+          # Ejemplo para Python:
+          # pip install -r requirements.txt
+          # pytest
+          #
+          # Ejemplo para Bash:
+          # chmod +x script.sh
+          # ./script.sh
