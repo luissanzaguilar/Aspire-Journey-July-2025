@@ -1,10 +1,10 @@
-name: Hola Mundo
+name: Hello World
 
-on: [push]  # Se ejecuta cada vez que haces push
+on: [push]
 
 jobs:
-  saludar:
+  greetings:
     runs-on: ubuntu-latest
     steps:
-      - name: Decir Hola
-        run: echo "¡Hola, GitHub Actions!"
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!"
