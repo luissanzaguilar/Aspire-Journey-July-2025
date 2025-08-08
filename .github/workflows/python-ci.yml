@@ -1,6 +1,13 @@
 name: Python CI with Pandas
 
-on: [push, pull_request]  # Se ejecuta en push o PRs
+#on: [push, pull_request]  # Se ejecuta en push o PRs
+on:  # Se ejecuta en push o PRs
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
