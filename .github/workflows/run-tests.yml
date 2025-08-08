@@ -1,6 +1,7 @@
 name: Run Project Tests
 
-on: []
+on: 
+  workflow_dispatch:
 
 jobs:
   test:
