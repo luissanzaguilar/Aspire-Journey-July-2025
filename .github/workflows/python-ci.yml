@@ -10,7 +10,13 @@ on:  # Se ejecuta en push o PRs
       - main
 
 jobs:
-  test:
+  greetings:
+    name: Greetings ${{ github.actor }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!"
+  python-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
