@@ -2,6 +2,10 @@
 
 name: Manual workflow
 
+env:
+  MY_VAR: "AT WORKFLOW LEVEL"
+
+
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
@@ -26,7 +30,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  contexts:
+    env:
+      MY_VAR: "AT JOB LEVEL"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,6 +40,8 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Print
+      env:
+        MY_VAR: "AT STEP LEVEL"
       run: |
         echo "Hello ${{ inputs.name }}"
         echo "Actor ${{ github.actor}}"
@@ -41,4 +49,5 @@ jobs:
         echo "sha ${{ github.sha}}"
         echo "ref ${{ github.ref}}"
         echo "repo ${{ github.repository}}"
+        echo "MY_VAR ${{ env.MY_VAR}}"
         
