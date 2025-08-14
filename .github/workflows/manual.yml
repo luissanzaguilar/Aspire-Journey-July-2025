@@ -50,4 +50,5 @@ jobs:
         echo "ref ${{ github.ref}}"
         echo "repo ${{ github.repository}}"
         echo "MY_VAR ${{ env.MY_VAR}}"
+        echo "MY_VAR global ${{ vars.MY_VAR}}
         
