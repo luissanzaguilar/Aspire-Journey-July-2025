@@ -19,6 +19,7 @@ jobs:
       - name: Say Hello again
         run: echo "Hi again!"
   python-test:
+    needs: [greetings]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
