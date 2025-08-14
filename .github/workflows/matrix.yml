@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Matrix workflow
 
 env:
   MY_VAR: "AT WORKFLOW LEVEL"
