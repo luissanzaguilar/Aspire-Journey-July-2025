@@ -40,8 +40,8 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Print
-      env:
-        MY_VAR: "AT STEP LEVEL"
+      # env:
+      #   MY_VAR: "AT STEP LEVEL"
       run: |
         echo "Hello ${{ inputs.name }}"
         echo "Actor ${{ github.actor}}"
