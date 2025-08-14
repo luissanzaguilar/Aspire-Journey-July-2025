@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
+      - name: Say Hello again
+        run: echo "Hi again!"
   python-test:
     runs-on: ubuntu-latest
     steps:
