@@ -29,7 +29,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - id: greeting
+        run: echo 'message=Value stored in step greeting' >> GITHUB_OUTPUT
+      - run: echo "Output value is " ${{steps.greeting.output.message}}
+        
   contexts:
     env:
       MY_VAR: "AT JOB LEVEL"
