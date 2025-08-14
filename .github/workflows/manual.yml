@@ -40,5 +40,5 @@ jobs:
         echo "runid ${{ github.run-id}}"
         echo "sha ${{ github.sha}}"
         echo "ref ${{ github.ref}}"
-        echo "ref ${{ github.ref}}"
+        echo "repo ${{ github.repository}}"
         
