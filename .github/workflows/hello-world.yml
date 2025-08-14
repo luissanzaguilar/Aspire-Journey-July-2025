@@ -8,3 +8,5 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
+      - name: Step 2 hello
+        run: echo "Second step!"
