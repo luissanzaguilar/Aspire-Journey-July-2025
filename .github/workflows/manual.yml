@@ -33,8 +33,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
+    - name: Print
       run: |
         echo "Hello ${{ inputs.name }}"
         echo "Actor ${{ github.actor}}"
-        echo "Actor ${{ github.event-name}}"
+        echo "runid ${{ github.run-id}}"
+        echo "sha ${{ github.sha}}"
+        echo "ref ${{ github.ref}}"
+        echo "ref ${{ github.ref}}"
+        
