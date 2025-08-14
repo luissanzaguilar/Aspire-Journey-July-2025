@@ -33,8 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: greeting
-        run: echo 'message=Value stored in step greeting' >> $GITHUB_OUTPUT
-      - run: echo "Output value is " ${{steps.greeting.outputs.message}}
+        run: |
+          echo 'message=Value stored in step greeting' >> $GITHUB_OUTPUT
+          echo 'status=My status' >> $GITHUB_OUTPUT
+      - run: echo "Output value is 1 " ${{steps.greeting.outputs.message}}
+      - run: echo "Output value is 2 " ${{steps.greeting.outputs.status}}
         
   contexts:
     env:
