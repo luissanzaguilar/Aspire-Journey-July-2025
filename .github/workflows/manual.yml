@@ -71,5 +71,5 @@ jobs:
         echo "MY_SECRET global ${{ secrets.MY_SECRET}}"
     - name: Deploy
       if: ${{ inputs.deploy }}
-      run: echo "Deploying IN ${{ inputs.TARGET_ENVIRONMENT }} with ${{ vars.VARS }} :)"
+      run: echo "Deploying IN ${{ inputs.TARGET_ENVIRONMENT }} with ${{ vars.MY_ENV_VAR }} :)"
       
