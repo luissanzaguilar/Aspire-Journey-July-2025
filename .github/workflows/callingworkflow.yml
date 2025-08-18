@@ -7,7 +7,7 @@ jobs:
   use-reusable:
     uses: ./.github/workflows/reusableworkflow.yml  # puede ser de otro proyecto
     with:
-      TARGET_ENVIROMENT: dev
+      TARGET_ENVIRONMENT: dev
     secrets:
       MY_SECRET: ${{secrets.USERNAME}}
 
