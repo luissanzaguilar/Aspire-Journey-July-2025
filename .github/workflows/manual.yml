@@ -66,6 +66,6 @@ jobs:
         echo "MY_VAR global ${{ vars.MY_VAR}}"
         echo "MY_SECRET global ${{ secrets.MY_SECRET}}"
     - name: Deploy
-      if: ${{deploy}}
+      if: ${{ inputs.deploy }}
       run: echo "Deploying :)"
       
