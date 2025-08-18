@@ -23,7 +23,7 @@ on:
         type: string
       deploy:
         description: 'Deploy?'
-        default: false
+        default: true
         required: true
         type: boolean
       TARGET_ENVIRONMENT:
