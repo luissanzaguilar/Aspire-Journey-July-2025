@@ -26,6 +26,9 @@ on:
         default: false
         required: true
         type: boolean
+      TARGET_ENVIRONMENT:
+        type: environment
+        default: tst
       environment:
         description: 'Environment'
         default: 'dev'
@@ -49,6 +52,7 @@ jobs:
       MY_VAR: "AT JOB LEVEL"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: ${{inputs.TARJET_ENVIRONMENT}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -67,5 +71,5 @@ jobs:
         echo "MY_SECRET global ${{ secrets.MY_SECRET}}"
     - name: Deploy
       if: ${{ inputs.deploy }}
-      run: echo "Deploying :)"
+      run: echo "Deploying IN ${{inputs.TARGET_ENVIRONMENT}} with ${{vars.VARS}} :)"
       
