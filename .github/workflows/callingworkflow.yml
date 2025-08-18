@@ -4,6 +4,10 @@ on:
   push
 
 jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Username ${{secrets.USERNAME}}"
   use-reusable:
     uses: ./.github/workflows/reusableworkflow.yml  # puede ser de otro proyecto
     with:
