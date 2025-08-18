@@ -13,6 +13,6 @@ jobs:
   echo-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Run in ${{inputs.TARGET_ENVIRONMENT}}
-      - run: echo "Secret is ${{secrets.MY_SECRET}}
+      - run: echo "Run in ${{inputs.TARGET_ENVIRONMENT}}"
+      - run: echo "Secret is ${{secrets.MY_SECRET}}"
       
