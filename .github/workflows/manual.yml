@@ -21,19 +21,14 @@ on:
         required: true
         # The data type of the input
         type: string
-      deploy:
+      DEPLOY:
         description: 'Deploy?'
         default: true
         required: true
         type: boolean
-      TARGET_ENVIRONMENT:
+      TARJET_ENVIRONMENT:
         type: environment
         default: tst
-      environment:
-        description: 'Environment'
-        default: 'dev'
-        required: true
-        type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -48,13 +43,10 @@ jobs:
       - run: echo "Output value is 2 " ${{steps.greeting.outputs.status}}
         
   contexts:
+    environment: ${{ inputs.TARJET_ENVIRONMENT }}
     env:
       MY_VAR: "AT JOB LEVEL"
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: ${{inputs.TARJET_ENVIRONMENT}}
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Print
       # env:
@@ -70,6 +62,6 @@ jobs:
         echo "MY_VAR global ${{ vars.MY_VAR}}"
         echo "MY_SECRET global ${{ secrets.MY_SECRET}}"
     - name: Deploy
-      if: ${{ inputs.deploy }}
-      run: echo "Deploying IN ${{ inputs.TARGET_ENVIRONMENT }} with ${{ vars.MY_ENV_VAR }} :)"
+      if: ${{ inputs.DEPLOY }}
+      run: echo "Deploying IN ${{ inputs.TARJET_ENVIRONMENT }} with ${{ vars.MY_ENV_VAR }} :)"
       
