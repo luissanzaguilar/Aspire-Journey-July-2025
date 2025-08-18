@@ -21,6 +21,11 @@ on:
         required: true
         # The data type of the input
         type: string
+      deploy:
+        description: 'Deploy?'
+        default: false
+        required: true
+        type: boolean
       environment:
         description: 'Environment'
         default: 'dev'
@@ -47,7 +52,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
     - name: Print
       # env:
       #   MY_VAR: "AT STEP LEVEL"
@@ -61,4 +65,7 @@ jobs:
         echo "MY_VAR ${{ env.MY_VAR}}"
         echo "MY_VAR global ${{ vars.MY_VAR}}"
         echo "MY_SECRET global ${{ secrets.MY_SECRET}}"
-        
+    - name: Deploy
+      if: ${{deploy}}
+      run: echo "Deploying :)"
+      
